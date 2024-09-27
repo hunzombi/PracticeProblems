@@ -93,7 +93,6 @@ int main()
                 c = chars[i];
                 if (countS[c] > countT[c])
                 {
-                    cout << c << ' ' << countS[c] << ' ' << countT[c] << '\n';
                     cout << "NU" << '\n';
                     cant = true;
                     break;
