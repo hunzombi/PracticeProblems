@@ -87,18 +87,23 @@ int main()
                 countT[c]++;
             }
             sort(chars.begin(), chars.end());
+            bool cant = false;
             for (int i=0; i < chars.size(); i++)
             {
                 c = chars[i];
-                if (countS[c] < countT[c])
+                if (countS[c] > countT[c])
                 {
+                    cout << c << ' ' << countS[c] << ' ' << countT[c] << '\n';
                     cout << "NU" << '\n';
+                    cant = true;
                     break;
                 }
                 countS[c] = 0;
                 countT[c] = 0;
             }
-            cout << "DA" << '\n';
+            if (!cant){
+                cout << "DA" << '\n';
+            }
             chars.clear();
         }
     }
