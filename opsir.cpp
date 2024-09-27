@@ -18,17 +18,17 @@ int S, T;
 
 int main()
 {
-    in >> C;
-    in >> K;
+    cin >> C;
+    cin >> K;
 
     if (C == 1)
     {
         for (int KK=0; KK < K; KK++)
         {
-            in >> S >> T;
+            cin >> S >> T;
             for (int i=0; i < S; i++)
             {
-                in >> c;
+                cin >> c;
                 if (countS[c] == 0)
                 {
                     chars.push_back(c);
@@ -37,7 +37,7 @@ int main()
             }
             for (int i=0; i < T; i++)
             {
-                in >> c;
+                cin >> c;
                 if (countS[c] == 0 && countT[c] == 0)
                 {
                     chars.push_back(c);
@@ -45,17 +45,17 @@ int main()
                 countT[c]++;
             }
             sort(chars.begin(), chars.end());
-            out << chars.size() << '\n';
+            cout << chars.size() << '\n';
             for (int i=0; i < chars.size(); i++)
             {
                 c = chars[i];
                 if (countS[c] > countT[c])
                 {
-                    out << c << " S\n";
+                    cout << c << " S\n";
                 }
                 else
                 {
-                    out << c << " T\n";
+                    cout << c << " T\n";
                 }
                 countS[c] = 0;
                 countT[c] = 0;
@@ -67,10 +67,10 @@ int main()
     {
         for (int KK=0; KK < K; KK++)
         {
-            in >> S >> T;
+            cin >> S >> T;
             for (int i=0; i < S; i++)
             {
-                in >> c;
+                cin >> c;
                 if (countS[c] == 0)
                 {
                     chars.push_back(c);
@@ -79,7 +79,7 @@ int main()
             }
             for (int i=0; i < T; i++)
             {
-                in >> c;
+                cin >> c;
                 if (countS[c] == 0 && countT[c] == 0)
                 {
                     chars.push_back(c);
@@ -92,13 +92,13 @@ int main()
                 c = chars[i];
                 if (countS[c] < countT[c])
                 {
-                    out << "NU" << '\n';
-                    return 0;
+                    cout << "NU" << '\n';
+                    break;
                 }
                 countS[c] = 0;
                 countT[c] = 0;
             }
-            out << "DA" << '\n';
+            cout << "DA" << '\n';
             chars.clear();
         }
     }
